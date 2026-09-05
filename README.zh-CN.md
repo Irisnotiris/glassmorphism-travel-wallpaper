@@ -28,12 +28,9 @@ English | [简体中文](./README.zh-CN.md)
 
 ## 安装
 
-本 Skill 适用于任何支持 Skill 工作流的 AI Agent。安装方式：
+直接将本仓库地址发给你的 AI agent，让它安装并使用此 skill。Agent 会自动克隆或下载仓库，读取 `SKILL.md` 获取工作流，并应用到你的图片生成任务中。
 
-1. **将 skill 文件夹**放置到你的 AI agent 的 skills 目录中（通常是 `.user_skills` 或 `skills` 文件夹），或
-2. **直接将 SKILL.md 的内容**提供给你的 AI agent，并要求它在图片生成任务中使用此 skill。
-
-Agent 会自动读取 `SKILL.md` 获取工作流，读取 `references/prompt-template.md` 获取生成提示词，并使用 `scripts/crop_to_ratio.py` 进行图片预处理。
+示例："安装并使用这个 skill：https://github.com/Irisnotiris/glassmorphism-travel-wallpaper"
 
 ## 使用方法
 
@@ -48,6 +45,10 @@ Agent 会自动读取 `SKILL.md` 获取工作流，读取 `references/prompt-tem
 
 ## 示例
 
+| 输入 | 输出 |
+|---|---|
+| ![输入](./examples/input.jpg) | ![输出](./examples/output.jpg) |
+
 输入：阿马尔菲海岸悬崖小镇照片 → 输出：9:19.5 锁屏壁纸，含毛玻璃卡片、"Ravello Village / Amalfi Coast" 地点信息和天气详情。
 
 ## 文件结构
@@ -57,6 +58,9 @@ glassmorphism-travel-wallpaper/
 ├── SKILL.md                          # Skill 主文件（工作流、质量自检）
 ├── README.md                         # 英文文档
 ├── README.zh-CN.md                   # 中文文档
+├── examples/
+│   ├── input.jpg                     # 示例输入照片
+│   └── output.jpg                    # 示例输出壁纸
 ├── references/
 │   └── prompt-template.md            # 核心生成提示词模板（含占位符）
 └── scripts/
@@ -73,17 +77,6 @@ glassmorphism-travel-wallpaper/
 | `{{SUBTITLE}}` | 地点副标题（自动推断） | "Amalfi Coast" |
 | `{{WEATHER_LINE1}}` | 第一行天气（自动推断） | "Sea breeze · 12 km/h" |
 | `{{WEATHER_LINE2}}` | 第二行天气（自动推断） | "Golden Hour in 42 min" |
-
-## 质量自检清单
-
-每张生成图都会检查：
-- [ ] 卡片小巧紧凑，位于画面下半部分
-- [ ] 上半部分有干净留白给锁屏时间
-- [ ] 背景是原图的虚化版本（非重新生成）
-- [ ] 玻璃卡片有真实磨砂玻璃质感（不像塑料，不像灰色遮罩）
-- [ ] 所有 UI 元素齐全（搜索框、预览图、地点、Directions、天气）
-- [ ] 文案与图片场景匹配且为英文
-- [ ] 无重复文字，无多余元素（状态栏、电池等）
 
 ## 相关项目
 

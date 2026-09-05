@@ -28,12 +28,9 @@ An AI Agent Skill that transforms any uploaded photo into a premium glassmorphis
 
 ## Installation
 
-This skill is designed to be used by any AI agent that supports skill-based workflows. To install:
+Simply share this repository URL with your AI agent and ask it to install and use this skill. The agent will clone or download the repository, read `SKILL.md` for the workflow, and apply it to your image generation tasks.
 
-1. **Place the skill folder** in your agent's skills directory (typically a `.user_skills` or `skills` folder), or
-2. **Share the SKILL.md content** directly with your AI agent and ask it to use this skill for image generation tasks.
-
-The agent will automatically read `SKILL.md` for the workflow, `references/prompt-template.md` for the generation prompt, and use `scripts/crop_to_ratio.py` for image preprocessing.
+Example: *"Install this skill and use it: https://github.com/Irisnotiris/glassmorphism-travel-wallpaper"*
 
 ## Usage
 
@@ -48,6 +45,10 @@ The agent will automatically read `SKILL.md` for the workflow, `references/promp
 
 ## Example
 
+| Input | Output |
+|---|---|
+| ![Input](./examples/input.jpg) | ![Output](./examples/output.jpg) |
+
 Input: Amalfi Coast cliff village photo → Output: 9:19.5 lock screen wallpaper with frosted glass card, "Ravello Village / Amalfi Coast" location info, and weather details.
 
 ## File Structure
@@ -57,6 +58,9 @@ glassmorphism-travel-wallpaper/
 ├── SKILL.md                          # Main skill file (workflow, quality checklist)
 ├── README.md                         # English documentation
 ├── README.zh-CN.md                   # Chinese documentation
+├── examples/
+│   ├── input.jpg                     # Example input photo
+│   └── output.jpg                    # Example output wallpaper
 ├── references/
 │   └── prompt-template.md            # Core generation prompt with placeholders
 └── scripts/
@@ -73,17 +77,6 @@ glassmorphism-travel-wallpaper/
 | `{{SUBTITLE}}` | Location subtitle (auto-inferred) | "Amalfi Coast" |
 | `{{WEATHER_LINE1}}` | First weather line (auto-inferred) | "Sea breeze · 12 km/h" |
 | `{{WEATHER_LINE2}}` | Second weather line (auto-inferred) | "Golden Hour in 42 min" |
-
-## Quality Checklist
-
-Every generated image is verified against:
-- [ ] Card is compact and positioned in the lower portion
-- [ ] Top half has clean whitespace for the lock screen clock
-- [ ] Background is a blurred version of the original image (not regenerated)
-- [ ] Glass card has realistic frosted glass texture (not plastic, not gray overlay)
-- [ ] All UI elements present (search bar, preview, location, directions, weather)
-- [ ] Text matches the image scene and is in English
-- [ ] No duplicate text, no extra elements (status bar, battery, etc.)
 
 ## Related
 
