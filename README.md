@@ -1,6 +1,6 @@
 # Glassmorphism Travel Wallpaper
 
-A Doubao Skill that transforms any uploaded photo into a premium glassmorphism travel info card phone lock screen wallpaper.
+An AI Agent Skill that transforms any uploaded photo into a premium glassmorphism travel info card phone lock screen wallpaper.
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Ratio](https://img.shields.io/badge/ratio-9%3A19.5-lightgrey)
@@ -28,21 +28,22 @@ A Doubao Skill that transforms any uploaded photo into a premium glassmorphism t
 
 ## Installation
 
-Copy the `glassmorphism-travel-wallpaper` folder into your Doubao skills directory:
+This skill is designed to be used by any AI agent that supports skill-based workflows. To install:
 
-```bash
-cp -r glassmorphism-travel-wallpaper /path/to/your/.user_skills/
-```
+1. **Place the skill folder** in your agent's skills directory (typically a `.user_skills` or `skills` folder), or
+2. **Share the SKILL.md content** directly with your AI agent and ask it to use this skill for image generation tasks.
+
+The agent will automatically read `SKILL.md` for the workflow, `references/prompt-template.md` for the generation prompt, and use `scripts/crop_to_ratio.py` for image preprocessing.
 
 ## Usage
 
-1. Upload any travel photo
-2. Say: *"Make this into a glassmorphism travel wallpaper"* or *"毛玻璃旅行信息卡手机壁纸"*
+1. Upload any travel photo to your AI agent
+2. Ask: *"Make this into a glassmorphism travel wallpaper"*
 3. The skill will:
    - Read and analyze your image
    - Center-crop it to 9:19.5
    - Auto-generate matching English location/weather text
-   - Generate the wallpaper with `image_edit`
+   - Generate the wallpaper using an image editing tool
    - Run a quality self-check (glass texture, text uniqueness, composition)
 
 ## Example

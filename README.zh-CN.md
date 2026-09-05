@@ -1,6 +1,6 @@
 # 玻璃拟态旅行信息卡手机壁纸
 
-一个豆包 Skill，将任意上传的照片转换为高级玻璃拟态旅行信息卡手机锁屏壁纸。
+一个 AI Agent Skill，将任意上传的照片转换为高级玻璃拟态旅行信息卡手机锁屏壁纸。
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![比例](https://img.shields.io/badge/比例-9%3A19.5-lightgrey)
@@ -28,21 +28,22 @@ English | [简体中文](./README.zh-CN.md)
 
 ## 安装
 
-将 `glassmorphism-travel-wallpaper` 文件夹复制到你的豆包 skills 目录：
+本 Skill 适用于任何支持 Skill 工作流的 AI Agent。安装方式：
 
-```bash
-cp -r glassmorphism-travel-wallpaper /path/to/your/.user_skills/
-```
+1. **将 skill 文件夹**放置到你的 AI agent 的 skills 目录中（通常是 `.user_skills` 或 `skills` 文件夹），或
+2. **直接将 SKILL.md 的内容**提供给你的 AI agent，并要求它在图片生成任务中使用此 skill。
+
+Agent 会自动读取 `SKILL.md` 获取工作流，读取 `references/prompt-template.md` 获取生成提示词，并使用 `scripts/crop_to_ratio.py` 进行图片预处理。
 
 ## 使用方法
 
-1. 上传任意旅行照片
-2. 说："把这张图做成玻璃拟态旅行壁纸" 或 "毛玻璃旅行信息卡手机壁纸"
+1. 向你的 AI agent 上传任意旅行照片
+2. 说："把这张图做成玻璃拟态旅行壁纸"
 3. Skill 会自动：
    - 读取并分析你的图片
    - 中心裁剪到 9:19.5
    - 根据图片内容自动生成匹配的英文地点/天气文案
-   - 调用 `image_edit` 生成壁纸
+   - 使用图片编辑工具生成壁纸
    - 执行质量自检（玻璃质感、文字唯一性、构图）
 
 ## 示例
